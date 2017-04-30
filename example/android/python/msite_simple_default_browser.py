@@ -6,13 +6,14 @@ from appium import webdriver
 class MSiteDefaultBrowserAndroidUITests(unittest.TestCase):
 
     def setUp(self):
+
+        # Default browser does not exist for android >= 6.0
         desired_caps = {
             'platformName': 'Android',
             'deviceName': 'Android Emulator',
-            'platformVersion': '4.2',
             'appPackage': 'com.android.browser',
             'appActivity': 'com.android.browser.BrowserActivity',
-            'avd': 'emulator_4.2.2'
+            'avd': 'samsung_galaxy_s6_6.0'
         }
         self.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
 
